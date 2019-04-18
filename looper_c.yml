@@ -1,0 +1,17 @@
+inherit: job:///SDE-Team/looper-c-builds-templates 
+tools:
+ maven:
+  - 3.5.0
+  
+envs:
+ global:
+  variables:
+   target_platform:
+    - GLS - Linux
+   system_components:Informix,Windows for C,
+   makefile_name:
+   
+flows:
+ default:
+  -call : docker_c_build(global)
+   
